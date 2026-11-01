@@ -1,0 +1,86 @@
+{
+  "watch": [
+    {
+      "src": "/images/products/watch-2.webp",
+      "alt": "Apple Watch Series 4 Gold, alternate view 2",
+      "label": "View 2"
+    },
+    {
+      "src": "/images/products/watch-3.webp",
+      "alt": "Apple Watch Series 4 Gold, alternate view 3",
+      "label": "View 3"
+    }
+  ],
+  "earbuds": [
+    {
+      "src": "/images/products/earbuds-2.webp",
+      "alt": "Apple Airpods, alternate view 2",
+      "label": "View 2"
+    },
+    {
+      "src": "/images/products/earbuds-3.webp",
+      "alt": "Apple Airpods, alternate view 3",
+      "label": "View 3"
+    }
+  ],
+  "perfume": [
+    {
+      "src": "/images/products/perfume-2.webp",
+      "alt": "Calvin Klein CK One, alternate view 2",
+      "label": "View 2"
+    },
+    {
+      "src": "/images/products/perfume-3.webp",
+      "alt": "Calvin Klein CK One, alternate view 3",
+      "label": "View 3"
+    }
+  ],
+  "sunglasses": [
+    {
+      "src": "/images/products/sunglasses-2.webp",
+      "alt": "Classic Sun Glasses, alternate view 2",
+      "label": "View 2"
+    },
+    {
+      "src": "/images/products/sunglasses-3.webp",
+      "alt": "Classic Sun Glasses, alternate view 3",
+      "label": "View 3"
+    }
+  ],
+  "headphones": [],
+  "plant": [
+    {
+      "src": "/images/products/plant-2.webp",
+      "alt": "Plant Pot, alternate view 2",
+      "label": "View 2"
+    },
+    {
+      "src": "/images/products/plant-3.webp",
+      "alt": "Plant Pot, alternate view 3",
+      "label": "View 3"
+    },
+    {
+      "src": "/images/products/plant-4.webp",
+      "alt": "Plant Pot, alternate view 4",
+      "label": "View 4"
+    }
+  ],
+  "shirt": [
+    {
+      "src": "/images/products/shirt-2.webp",
+      "alt": "Man Short Sleeve Shirt, alternate view 2",
+      "label": "View 2"
+    },
+    {
+      "src": "/images/products/shirt-3.webp",
+      "alt": "Man Short Sleeve Shirt, alternate view 3",
+      "label": "View 3"
+    },
+    {
+      "src": "/images/products/shirt-4.webp",
+      "alt": "Man Short Sleeve Shirt, alternate view 4",
+      "label": "View 4"
+    }
+  ],
+  "beauty": []
+}

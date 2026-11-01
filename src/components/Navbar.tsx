@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { useState } from "react";
 import {
   ChevronDown,
@@ -14,6 +17,7 @@ import { Logo } from "./Logo";
 import { formatPrice } from "@/lib/utils";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartCount, cartTotal, setPanel, viewAll, openInfo } = useStore();
   const close = () => setMenuOpen(false);
@@ -26,10 +30,15 @@ export function Navbar() {
           id="main-navigation"
           aria-label="Main navigation"
         >
-          <a href="#home" className="active" onClick={close}>
+          <Link
+            href="/#home"
+            className={pathname === "/" ? "active" : ""}
+            onClick={close}
+          >
             Home
-          </a>
+          </Link>
           <button
+            className={pathname.startsWith("/products/") ? "active" : ""}
             onClick={() => {
               viewAll();
               close();
@@ -37,12 +46,12 @@ export function Navbar() {
           >
             Shop <ChevronDown size={12} />
           </button>
-          <a href="#categories" onClick={close}>
+          <Link href="/#categories" onClick={close}>
             Collections
-          </a>
-          <a href="#about" onClick={close}>
+          </Link>
+          <Link href="/#about" onClick={close}>
             About us
-          </a>
+          </Link>
           <button
             onClick={() => {
               openInfo(

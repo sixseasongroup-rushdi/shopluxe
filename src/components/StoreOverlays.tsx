@@ -18,7 +18,7 @@ import {
 import { products } from "@/data/products";
 import { formatPrice, isGeneratedPhoto, isValidEmail } from "@/lib/utils";
 import { useStore } from "./StoreProvider";
-import { ProductCard, Stars } from "./ProductCard";
+import { ProductCard } from "./ProductCard";
 
 function CartPanel() {
   const { cart, cartTotal, changeQuantity, setPanel, openInfo, viewAll } =
@@ -60,7 +60,10 @@ function CartPanel() {
         {cart.map((item) => {
           const product = products.find((p) => p.id === item.productId)!;
           return (
-            <div className="cart-item" key={product.id}>
+            <div
+              className="cart-item"
+              key={`${product.id}-${item.variant ?? ""}`}
+            >
               <div
                 className={`cart-item-image ${isGeneratedPhoto(product.image) ? "catalog-photo" : ""}`}
               >
@@ -73,11 +76,12 @@ function CartPanel() {
               </div>
               <div className="cart-item-copy">
                 <h3>{product.name}</h3>
+                {item.variant && <p className="cart-variant">{item.variant}</p>}
                 <span>{formatPrice(product.price)}</span>
                 <div className="quantity-control">
                   <button
                     aria-label={`Decrease ${product.name} quantity`}
-                    onClick={() => changeQuantity(product.id, -1)}
+                    onClick={() => changeQuantity(product.id, -1, item.variant)}
                   >
                     <Minus size={13} />
                   </button>
@@ -86,7 +90,7 @@ function CartPanel() {
                   </span>
                   <button
                     aria-label={`Increase ${product.name} quantity`}
-                    onClick={() => changeQuantity(product.id, 1)}
+                    onClick={() => changeQuantity(product.id, 1, item.variant)}
                     disabled={item.quantity >= 99}
                   >
                     <Plus size={13} />
@@ -96,7 +100,9 @@ function CartPanel() {
               <button
                 className="remove-item"
                 aria-label={`Remove ${product.name}`}
-                onClick={() => changeQuantity(product.id, -item.quantity)}
+                onClick={() =>
+                  changeQuantity(product.id, -item.quantity, item.variant)
+                }
               >
                 <Trash2 size={16} />
               </button>
@@ -126,7 +132,7 @@ function CartPanel() {
               `YOUR ORDER\n\n${cart
                 .map((item) => {
                   const p = products.find((p) => p.id === item.productId)!;
-                  return `${p.name} × ${item.quantity} — ${formatPrice(p.price * item.quantity)}`;
+                  return `${p.name}${item.variant ? ` (${item.variant})` : ""} × ${item.quantity} — ${formatPrice(p.price * item.quantity)}`;
                 })
                 .join(
                   "\n",
@@ -298,56 +304,8 @@ function WishlistPanel() {
     </>
   );
 }
-function ProductPanel() {
-  const {
-    selectedProduct: product,
-    addToCart,
-    toggleWishlist,
-    wishlist,
-  } = useStore();
-  if (!product) return null;
-  return (
-    <div className="product-preview">
-      <div
-        className={`preview-image ${isGeneratedPhoto(product.image) ? "catalog-photo" : ""}`}
-      >
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          sizes="(max-width: 600px) 80vw, 450px"
-        />
-      </div>
-      <div className="product-rating">
-        <Stars rating={product.rating} />
-        <span>({product.reviews} illustrative reviews)</span>
-      </div>
-      <p>{product.description}</p>
-      <div className="product-price">
-        <strong>{formatPrice(product.price)}</strong>
-        {product.oldPrice && <del>{formatPrice(product.oldPrice)}</del>}
-      </div>
-      <button
-        className="button button-primary"
-        onClick={() => addToCart(product)}
-      >
-        <ShoppingBag size={16} />
-        ADD TO CART
-      </button>
-      <button className="preview-save" onClick={() => toggleWishlist(product)}>
-        <Heart
-          size={16}
-          fill={wishlist.includes(product.id) ? "currentColor" : "none"}
-        />
-        {wishlist.includes(product.id)
-          ? "Saved to wishlist"
-          : "Save to wishlist"}
-      </button>
-    </div>
-  );
-}
 export function StoreOverlays() {
-  const { panel, setPanel, info, selectedProduct, toast } = useStore();
+  const { panel, setPanel, info, toast } = useStore();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -373,9 +331,7 @@ export function StoreOverlays() {
           ? "YOUR WISHLIST"
           : panel === "account"
             ? "WELCOME TO SHOPLUXE"
-            : panel === "product"
-              ? selectedProduct?.name
-              : info.title;
+            : info.title;
   return (
     <>
       <dialog
@@ -418,8 +374,6 @@ export function StoreOverlays() {
             <AccountPanel />
           ) : panel === "wishlist" ? (
             <WishlistPanel />
-          ) : panel === "product" ? (
-            <ProductPanel />
           ) : panel === "info" ? (
             <div className="info-content">{info.body}</div>
           ) : null}

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Heart, Plus, Star } from "lucide-react";
 import { formatPrice, isGeneratedPhoto } from "@/lib/utils";
 import type { Product } from "@/types";
@@ -10,23 +11,30 @@ export function Stars({ rating = 5 }: { rating?: number }) {
   return (
     <span className="stars" aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: 5 }, (_, i) => (
-        <Star key={i} size={12} fill="currentColor" strokeWidth={1} />
+        <Star
+          key={i}
+          size={12}
+          fill={i < Math.round(rating) ? "currentColor" : "none"}
+          strokeWidth={1}
+          aria-hidden="true"
+        />
       ))}
     </span>
   );
 }
 export function ProductCard({ product }: { product: Product }) {
-  const { wishlist, toggleWishlist, addToCart, openProduct } = useStore();
+  const { wishlist, toggleWishlist, addToCart, setPanel } = useStore();
   const saved = wishlist.includes(product.id);
   return (
     <article className="product-card">
       <div
         className={`product-image-wrap ${isGeneratedPhoto(product.image) ? "catalog-photo" : ""}`}
       >
-        <button
+        <Link
           className="product-image-button"
           aria-label={`View ${product.name}`}
-          onClick={() => openProduct(product)}
+          href={`/products/${product.id}`}
+          onClick={() => setPanel(null)}
         >
           <Image
             src={product.image}
@@ -34,7 +42,7 @@ export function ProductCard({ product }: { product: Product }) {
             fill
             sizes="(max-width: 480px) 44vw, (max-width: 767px) 45vw, (max-width: 1023px) 30vw, 230px"
           />
-        </button>
+        </Link>
         {product.discount && (
           <span className="discount-tag">−{product.discount}%</span>
         )}
@@ -51,9 +59,13 @@ export function ProductCard({ product }: { product: Product }) {
         </span>
       </div>
       <div className="product-details">
-        <button className="product-name" onClick={() => openProduct(product)}>
+        <Link
+          className="product-name"
+          href={`/products/${product.id}`}
+          onClick={() => setPanel(null)}
+        >
           {product.name}
-        </button>
+        </Link>
         <div className="product-rating">
           <Stars rating={product.rating} />
           <span>({product.reviews})</span>

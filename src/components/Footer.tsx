@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
 import { ApplePay, Facebook, Instagram } from "./BrandIcons";
 import { Logo } from "./Logo";
@@ -65,10 +67,10 @@ export function Footer() {
           </div>
           <div className="footer-column">
             <h3>Quick links</h3>
-            <a href="#home">Home</a>
+            <Link href="/#home">Home</Link>
             <button onClick={viewAll}>Shop</button>
-            <a href="#categories">Collections</a>
-            <a href="#about">About Us</a>
+            <Link href="/#categories">Collections</Link>
+            <Link href="/#about">About Us</Link>
             <a href="#contact">Contact Us</a>
           </div>
           <div className="footer-column">
@@ -131,9 +133,9 @@ export function Footer() {
             <span className="contact-demo">
               Illustrative demo contact details.
             </span>
-            <a className="back-top" href="#home">
+            <Link className="back-top" href="/#home">
               Back to top <ArrowUpRight size={13} />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="footer-bottom">

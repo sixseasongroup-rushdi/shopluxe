@@ -13,7 +13,8 @@
 @theme inline {
   --color-background: #fff;
   --color-foreground: var(--ink);
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -26,7 +27,8 @@ body {
   margin: 0;
   background: #fff;
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
@@ -93,7 +95,7 @@ svg {
   background: var(--navy);
   color: #fff;
   font-size: 12px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
 }
 .announcement-inner {
   height: 38px;
@@ -121,7 +123,7 @@ svg {
   gap: 12px;
   padding: 5px 0;
   font-size: 12px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   border-bottom: 1px solid #a3a3a3;
 }
 .navbar {
@@ -169,7 +171,7 @@ svg {
 .nav-links > button {
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -279,7 +281,7 @@ svg {
   display: block;
   font-size: 13px;
   font-weight: 550;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   line-height: 1.7;
   color: #8d7359;
 }
@@ -289,7 +291,7 @@ svg {
   gap: 9px;
   color: #7e6c5b;
   font-size: 13px;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   margin: 0 0 21px;
 }
 .hero-copy .eyebrow > span {
@@ -305,7 +307,8 @@ h1 {
   margin: 0;
 }
 .hero-tagline {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-size: 24px;
   letter-spacing: -0.35px;
@@ -331,7 +334,7 @@ h1 {
   padding: 0 23px;
   gap: 21px;
   font-size: 14px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   font-weight: 600;
   border: 1px solid transparent;
   transition:
@@ -371,7 +374,7 @@ h1 {
   gap: 7px;
   font-size: 12px;
   font-weight: 550;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   white-space: nowrap;
 }
 .hero-services svg {
@@ -434,7 +437,7 @@ h1 {
 }
 .discount-seal > span {
   font-size: 12px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   line-height: 1.4;
 }
 .discount-seal strong {
@@ -453,7 +456,7 @@ h1 {
   right: 11%;
   color: #736456;
   font-size: 11px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
 }
 .slider-controls {
   position: absolute;
@@ -513,7 +516,7 @@ h1 {
 .section-heading h2,
 .trust-newsletter h2 {
   font-size: 30px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   font-weight: 650;
   line-height: 1.4;
   margin: 6px 0 0;
@@ -606,7 +609,7 @@ h1 {
   gap: 12px;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   border-bottom: 1px solid #b8a188;
   white-space: nowrap;
 }
@@ -692,7 +695,7 @@ h1 {
   background: #ffffffd9;
   color: #5e5144;
   font-size: 12px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   transition: bottom 0.25s;
   pointer-events: none;
 }
@@ -757,7 +760,7 @@ h1 {
   margin-top: 13px;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   transition:
     background 0.2s,
     color 0.2s,
@@ -791,7 +794,7 @@ h1 {
 .promo-card h3 {
   margin: 0 0 8px;
   font-size: 20px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   font-weight: 600;
 }
 .promo-card p {
@@ -861,7 +864,7 @@ h1 {
 }
 .trust-newsletter h2 {
   font-size: 24px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   margin-top: 7px;
 }
 .trust-newsletter p {
@@ -964,7 +967,7 @@ h1 {
   color: #fff;
   background: var(--navy);
   font-size: 14px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   transition: background 0.2s;
 }
 .newsletter-form button:hover {
@@ -1047,7 +1050,7 @@ h1 {
 .footer-column h3 {
   font-size: 15px;
   font-weight: 550;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   margin: 0 0 10px;
 }
 .footer-column > a,
@@ -1082,7 +1085,7 @@ h1 {
 }
 .footer-contact .back-top {
   font-size: 12px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   color: #d1c5b7;
   align-items: center;
 }
@@ -1224,7 +1227,8 @@ h1 {
   color: var(--beige);
 }
 .empty-state h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
   font-size: 23px;
   font-weight: 400;
   margin: 24px 0 10px;
@@ -1376,7 +1380,7 @@ h1 {
 }
 .search-result-count {
   font-size: 12px;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   color: #86796b;
   margin-top: 23px;
   line-height: 1.8;
@@ -1436,7 +1440,8 @@ h1 {
   color: #a78a6a;
 }
 .account-panel h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
   font-size: 25px;
   font-weight: 400;
   margin: 20px 0 10px;
@@ -1451,7 +1456,7 @@ h1 {
   font-size: 12px;
   padding: 5px 9px;
   background: #f2eae0;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   color: #8c7153;
   margin-top: 7px;
 }
@@ -1776,7 +1781,7 @@ h1 {
   }
   .hero-copy .eyebrow {
     font-size: 13px;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
   }
   .hero-tagline {
     font-size: 24px;
@@ -1878,7 +1883,7 @@ h1 {
   }
   .trust-newsletter .eyebrow {
     font-size: 13px;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
   }
   .trust-newsletter p {
     font-size: 13px;
@@ -1952,7 +1957,7 @@ h1 {
   }
   .announcement {
     font-size: 12px;
-    letter-spacing: .15px;
+    letter-spacing: 0.15px;
   }
   .announcement-inner {
     height: 32px;
@@ -2011,7 +2016,7 @@ h1 {
   .nav-links > a,
   .nav-links > button {
     font-size: 14px;
-    letter-spacing: .15px;
+    letter-spacing: 0.15px;
     justify-content: flex-start;
     min-height: 44px;
   }
@@ -2119,7 +2124,7 @@ h1 {
   }
   .eyebrow {
     font-size: 13px;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
   }
   .category-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2433,7 +2438,7 @@ h1 {
   }
   .announcement {
     font-size: 12px;
-    letter-spacing: .15px;
+    letter-spacing: 0.15px;
   }
   .lets-talk {
     font-size: 12px;
@@ -2492,7 +2497,7 @@ h1 {
   }
   .footer-column h3 {
     font-size: 15px;
-    letter-spacing: .15px;
+    letter-spacing: 0.15px;
   }
   .customer-proof {
     gap: 12px;
@@ -2515,52 +2520,182 @@ h1 {
   }
 }
 /* Give larger UI text room to breathe at every screen size. */
-body { line-height: 1.5; }
-.hero-tagline { font-weight: 500; letter-spacing: -.3px; }
-.hero-buttons, .hero-services, .customer-proof { flex-wrap: wrap; }
-.hero-services { row-gap: 12px; }
-.hero-services > span { letter-spacing: 0; }
-.category-card > span { min-height: 42px; line-height: 1.4; }
-.product-price { font-variant-numeric: tabular-nums; flex-wrap: wrap; }
-.product-rating { flex-wrap: wrap; }
-.stars svg { width: 13px; height: 13px; }
-.newsletter-form { min-height: 50px; }
-.footer-column > a, .footer-column > button { min-height: 28px; }
-.footer-main > *, .trust-inner > * { min-width: 0; }
-.footer-contact > a span { overflow-wrap: anywhere; }
-.announcement-inner { height: auto; min-height: 42px; padding-block: 7px; }
-.announcement p { line-height: 1.45; }
-.promo-card h3, .section-heading h2, .trust-newsletter h2 { letter-spacing: -.4px; }
-.promo-card { min-height: 175px; }
+body {
+  line-height: 1.5;
+}
+.hero-tagline {
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+.hero-buttons,
+.hero-services,
+.customer-proof {
+  flex-wrap: wrap;
+}
+.hero-services {
+  row-gap: 12px;
+}
+.hero-services > span {
+  letter-spacing: 0;
+}
+.category-card > span {
+  min-height: 42px;
+  line-height: 1.4;
+}
+.product-price {
+  font-variant-numeric: tabular-nums;
+  flex-wrap: wrap;
+}
+.product-rating {
+  flex-wrap: wrap;
+}
+.stars svg {
+  width: 13px;
+  height: 13px;
+}
+.newsletter-form {
+  min-height: 50px;
+}
+.footer-column > a,
+.footer-column > button {
+  min-height: 28px;
+}
+.footer-main > *,
+.trust-inner > * {
+  min-width: 0;
+}
+.footer-contact > a span {
+  overflow-wrap: anywhere;
+}
+.announcement-inner {
+  height: auto;
+  min-height: 42px;
+  padding-block: 7px;
+}
+.announcement p {
+  line-height: 1.45;
+}
+.promo-card h3,
+.section-heading h2,
+.trust-newsletter h2 {
+  letter-spacing: -0.4px;
+}
+.promo-card {
+  min-height: 175px;
+}
 @media (min-width: 768px) and (max-width: 1023px) {
-  .nav-inner { height: 76px; }
-  .mobile-toggle { display: inline-flex; }
-  .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; background: white; padding: 16px 36px; border-top: 1px solid var(--line); box-shadow: 0 15px 25px #0b142612; }
-  .nav-links.is-open { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
-  .nav-links > a, .nav-links > button { justify-content: flex-start; min-height: 44px; font-size: 16px; }
-  .nav-links > a::after, .nav-links > button::after { display: none; }
-  .nav-actions { gap: 15px; }
-  .newsletter-form { flex-wrap: wrap; padding: 10px; }
-  .newsletter-form input { flex-basis: 100%; }
-  .newsletter-form button { min-height: 44px; width: 100%; }
+  .nav-inner {
+    height: 76px;
+  }
+  .mobile-toggle {
+    display: inline-flex;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 16px 36px;
+    border-top: 1px solid var(--line);
+    box-shadow: 0 15px 25px #0b142612;
+  }
+  .nav-links.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .nav-links > a,
+  .nav-links > button {
+    justify-content: flex-start;
+    min-height: 44px;
+    font-size: 16px;
+  }
+  .nav-links > a::after,
+  .nav-links > button::after {
+    display: none;
+  }
+  .nav-actions {
+    gap: 15px;
+  }
+  .newsletter-form {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  .newsletter-form input {
+    flex-basis: 100%;
+  }
+  .newsletter-form button {
+    min-height: 44px;
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
-  .announcement-inner { min-height: 52px; gap: 14px; }
-  .announcement p { font-size: 11px; max-width: 245px; }
-  .lets-talk { font-size: 11px; flex-shrink: 0; }
-  .hero-copy .eyebrow { font-size: 12px; }
-  .hero-services { gap: 12px 18px; }
-  .hero-services > span { font-size: 12px; }
-  .hero-tagline { font-size: 23px; }
-  .hero-buttons .button { padding-inline: 16px; }
-  .hero-image-caption { display: none; }
-  .newsletter-form { flex-wrap: wrap; padding: 12px; gap: 10px; }
-  .newsletter-form input { flex-basis: calc(100% - 30px); padding-block: 7px; }
-  .newsletter-form button { min-height: 44px; width: 100%; padding: 12px; }
-  .trust-newsletter h2 { font-size: 24px; }
-  .footer-column h3 { line-height: 1.4; min-height: 42px; }
-  .footer-contact > a, .footer-contact > .address { font-size: 13px; }
-  .promo-card h3 { font-size: 21px; }
-  .promo-icon { flex-shrink: 0; }
-  .nav-links > a, .nav-links > button { font-size: 16px; }
+  .announcement-inner {
+    min-height: 52px;
+    gap: 14px;
+  }
+  .announcement p {
+    font-size: 11px;
+    max-width: 245px;
+  }
+  .lets-talk {
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .hero-copy .eyebrow {
+    font-size: 12px;
+  }
+  .hero-services {
+    gap: 12px 18px;
+  }
+  .hero-services > span {
+    font-size: 12px;
+  }
+  .hero-tagline {
+    font-size: 23px;
+  }
+  .hero-buttons .button {
+    padding-inline: 16px;
+  }
+  .hero-image-caption {
+    display: none;
+  }
+  .newsletter-form {
+    flex-wrap: wrap;
+    padding: 12px;
+    gap: 10px;
+  }
+  .newsletter-form input {
+    flex-basis: calc(100% - 30px);
+    padding-block: 7px;
+  }
+  .newsletter-form button {
+    min-height: 44px;
+    width: 100%;
+    padding: 12px;
+  }
+  .trust-newsletter h2 {
+    font-size: 24px;
+  }
+  .footer-column h3 {
+    line-height: 1.4;
+    min-height: 42px;
+  }
+  .footer-contact > a,
+  .footer-contact > .address {
+    font-size: 13px;
+  }
+  .promo-card h3 {
+    font-size: 21px;
+  }
+  .promo-icon {
+    flex-shrink: 0;
+  }
+  .nav-links > a,
+  .nav-links > button {
+    font-size: 16px;
+  }
 }

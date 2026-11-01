@@ -9,12 +9,14 @@ import {
   useState,
 } from "react";
 import { products } from "@/data/products";
+import { usePathname, useRouter } from "next/navigation";
+import { getDefaultVariant, isValidVariant } from "@/data/product-details";
 import type { CartItem, InfoContent, Panel, Product } from "@/types";
 
 type SavedState = { cart: CartItem[]; wishlist: string[]; hydrated: boolean };
 type Action =
   | { type: "restore"; cart: CartItem[]; wishlist: string[] }
-  | { type: "quantity"; id: string; change: number }
+  | { type: "quantity"; id: string; change: number; variant?: string }
   | { type: "wishlist"; id: string }
   | { type: "clear" };
 function reducer(state: SavedState, action: Action): SavedState {
@@ -28,7 +30,9 @@ function reducer(state: SavedState, action: Action): SavedState {
         ? state.wishlist.filter((id) => id !== action.id)
         : [...state.wishlist, action.id],
     };
-  const existing = state.cart.find((item) => item.productId === action.id);
+  const matches = (item: CartItem) =>
+    item.productId === action.id && item.variant === action.variant;
+  const existing = state.cart.find(matches);
   const quantity = Math.min(
     99,
     Math.max(0, (existing?.quantity ?? 0) + action.change),
@@ -36,8 +40,10 @@ function reducer(state: SavedState, action: Action): SavedState {
   return {
     ...state,
     cart: [
-      ...state.cart.filter((item) => item.productId !== action.id),
-      ...(quantity ? [{ productId: action.id, quantity }] : []),
+      ...state.cart.filter((item) => !matches(item)),
+      ...(quantity
+        ? [{ productId: action.id, quantity, variant: action.variant }]
+        : []),
     ],
   };
 }
@@ -48,8 +54,8 @@ type Store = {
   cartTotal: number;
   panel: Panel;
   setPanel: (panel: Panel) => void;
-  addToCart: (product: Product) => void;
-  changeQuantity: (id: string, change: number) => void;
+  addToCart: (product: Product, quantity?: number, variant?: string) => void;
+  changeQuantity: (id: string, change: number, variant?: string) => void;
   toggleWishlist: (product: Product) => void;
   category: string;
   selectCategory: (id: string) => void;
@@ -59,7 +65,6 @@ type Store = {
   showOffers: () => void;
   info: InfoContent;
   openInfo: (title: string, body: string) => void;
-  selectedProduct: Product | null;
   openProduct: (product: Product) => void;
   toast: string;
   notify: (message: string) => void;
@@ -67,6 +72,8 @@ type Store = {
 };
 const StoreContext = createContext<Store | null>(null);
 export function StoreProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
+  const pathname = usePathname();
   const [state, dispatch] = useReducer(reducer, {
     cart: [],
     wishlist: [],
@@ -77,20 +84,27 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [showAll, setShowAll] = useState(false);
   const [offersOnly, setOffersOnly] = useState(false);
   const [info, setInfo] = useState<InfoContent>({ title: "", body: "" });
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [toast, setToast] = useState("");
   useEffect(() => {
     try {
       const saved = JSON.parse(localStorage.getItem("shopluxe-store") || "{}");
       const cart = Array.isArray(saved.cart)
-        ? saved.cart.filter(
-            (item: CartItem) =>
-              item &&
-              products.some((p) => p.id === item.productId) &&
-              Number.isInteger(item.quantity) &&
-              item.quantity > 0 &&
-              item.quantity <= 99,
-          )
+        ? saved.cart
+            .filter(
+              (item: CartItem) =>
+                item &&
+                products.some((p) => p.id === item.productId) &&
+                Number.isInteger(item.quantity) &&
+                item.quantity > 0 &&
+                item.quantity <= 99,
+            )
+            .map((item: CartItem) => ({
+              ...item,
+              variant:
+                item.variant && isValidVariant(item.productId, item.variant)
+                  ? item.variant
+                  : getDefaultVariant(item.productId),
+            }))
         : [];
       const wishlist = Array.isArray(saved.wishlist)
         ? saved.wishlist.filter((id: unknown) =>
@@ -121,6 +135,11 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   }, [toast]);
   const notify = useCallback((message: string) => setToast(message), []);
   function scrollToProducts() {
+    setPanel(null);
+    if (pathname !== "/") {
+      router.push("/#products");
+      return;
+    }
     setTimeout(
       () =>
         document
@@ -137,7 +156,6 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     showAll,
     offersOnly,
     info,
-    selectedProduct,
     toast,
     notify,
     cartCount: state.cart.reduce((sum, item) => sum + item.quantity, 0),
@@ -148,12 +166,23 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           item.quantity,
       0,
     ),
-    addToCart(product) {
-      dispatch({ type: "quantity", id: product.id, change: 1 });
-      notify(`${product.name} added to your bag`);
+    addToCart(product, quantity = 1, variant = getDefaultVariant(product.id)) {
+      const existing = state.cart.find(
+        (item) => item.productId === product.id && item.variant === variant,
+      );
+      const available = 99 - (existing?.quantity ?? 0);
+      if (!available) {
+        notify("You’ve reached the limit of 99 for this option.");
+        return;
+      }
+      const added = Math.min(available, Math.max(1, Math.floor(quantity)));
+      dispatch({ type: "quantity", id: product.id, change: added, variant });
+      notify(
+        `${added > 1 ? `${added} × ` : ""}${product.name} added to your bag`,
+      );
     },
-    changeQuantity(id, change) {
-      dispatch({ type: "quantity", id, change });
+    changeQuantity(id, change, variant) {
+      dispatch({ type: "quantity", id, change, variant });
     },
     toggleWishlist(product) {
       dispatch({ type: "wishlist", id: product.id });
@@ -187,8 +216,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       setPanel("info");
     },
     openProduct(product) {
-      setSelectedProduct(product);
-      setPanel("product");
+      setPanel(null);
+      router.push(`/products/${product.id}`);
     },
     clearCart() {
       dispatch({ type: "clear" });
