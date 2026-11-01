@@ -1,0 +1,14 @@
+{
+  "watch": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/1.webp",
+  "earbuds": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/1.webp",
+  "perfume": "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp",
+  "sunglasses": "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp",
+  "headphones": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/1.webp",
+  "plant": "https://cdn.dummyjson.com/product-images/home-decoration/plant-pot/1.webp",
+  "fashion": "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/1.webp",
+  "beauty": "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp",
+  "avatar-1": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&h=100&q=80",
+  "avatar-2": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&h=100&q=80",
+  "avatar-3": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80",
+  "avatar-4": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&h=100&q=80"
+}
