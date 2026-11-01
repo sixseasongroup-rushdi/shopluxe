@@ -27,7 +27,7 @@ export function Navbar() {
           aria-label="Main navigation"
         >
           <a href="#home" className="active" onClick={close}>
-            HOME
+            Home
           </a>
           <button
             onClick={() => {
@@ -35,13 +35,13 @@ export function Navbar() {
               close();
             }}
           >
-            SHOP <ChevronDown size={12} />
+            Shop <ChevronDown size={12} />
           </button>
           <a href="#categories" onClick={close}>
-            COLLECTIONS
+            Collections
           </a>
           <a href="#about" onClick={close}>
-            ABOUT US
+            About us
           </a>
           <button
             onClick={() => {
@@ -52,10 +52,10 @@ export function Navbar() {
               close();
             }}
           >
-            BLOG
+            Blog
           </button>
           <a href="#contact" onClick={close}>
-            CONTACT US
+            Contact us
           </a>
         </nav>
         <div className="nav-actions">

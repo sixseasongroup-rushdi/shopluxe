@@ -14,12 +14,12 @@ import { useStore } from "./StoreProvider";
 
 const slides = [
   {
-    eyebrow: "WELCOME TO SHOPLUXE",
+    eyebrow: "Welcome to SHOPLUXE",
     heading: (
       <>
-        EVERYTHING.
+        Everything.
         <br />
-        FOR EVERYONE.
+        For everyone.
       </>
     ),
     tagline: "Best Quality, Best Prices!",
@@ -29,12 +29,12 @@ const slides = [
     alt: "Canvas travel backpack, cream sneakers, bottle, and sculptural home decor in a warm studio",
   },
   {
-    eyebrow: "YOUR NEXT EVERYDAY FAVORITES",
+    eyebrow: "Your next everyday favorites",
     heading: (
       <>
-        LITTLE DETAILS.
+        Little details.
         <br />
-        BIG DIFFERENCE.
+        Big difference.
       </>
     ),
     tagline: "Thoughtfully chosen. Just for you.",
@@ -44,12 +44,12 @@ const slides = [
     alt: "Thoughtfully curated travel and home essentials in neutral tones",
   },
   {
-    eyebrow: "MAKE ROOM FOR SOMETHING NEW",
+    eyebrow: "Make room for something new",
     heading: (
       <>
-        MORE STYLE.
+        More style.
         <br />
-        LESS SPENDING.
+        Less spending.
       </>
     ),
     tagline: "Good finds. Even better prices.",
@@ -80,24 +80,24 @@ export function HeroSection() {
           <p className="hero-description">{current.description}</p>
           <div className="hero-buttons">
             <button className="button button-primary" onClick={viewAll}>
-              SHOP NOW <ArrowRight size={16} />
+              Shop now <ArrowRight size={16} />
             </button>
             <a href="#categories" className="button button-outline">
-              EXPLORE COLLECTIONS
+              Explore collections
             </a>
           </div>
           <div className="hero-services">
             <span>
               <Truck />
-              FREE SHIPPING
+              Free shipping
             </span>
             <span>
               <RotateCcw />
-              EASY RETURNS
+              Easy returns
             </span>
             <span>
               <ShieldCheck />
-              SECURE PAYMENT
+              Secure payment
             </span>
           </div>
         </div>

@@ -47,7 +47,7 @@ export function ProductCard({ product }: { product: Product }) {
           <Heart size={16} fill={saved ? "currentColor" : "none"} />
         </button>
         <span className="quick-view">
-          A CLOSER LOOK <Plus size={12} />
+          A closer look <Plus size={12} />
         </span>
       </div>
       <div className="product-details">
@@ -64,7 +64,7 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
         <button className="add-cart" onClick={() => addToCart(product)}>
           <Plus size={14} />
-          ADD TO CART
+          Add to cart
         </button>
       </div>
     </article>

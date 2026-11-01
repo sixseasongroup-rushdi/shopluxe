@@ -11,8 +11,8 @@ export function CategorySection() {
   return (
     <section id="categories" className="container category-section">
       <div className="section-heading centered">
-        <span className="eyebrow">A WORLD OF POSSIBILITIES</span>
-        <h2>BROWSE BY CATEGORY</h2>
+        <span className="eyebrow">A world of possibilities</span>
+        <h2>Browse by category</h2>
         <span className="heading-rule" />
       </div>
       <div className="category-grid">

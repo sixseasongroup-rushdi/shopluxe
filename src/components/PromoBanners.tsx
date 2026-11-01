@@ -12,7 +12,7 @@ export function PromoBanners() {
     >
       <article className="promo-card promo-navy">
         <div>
-          <h3>FREE SHIPPING</h3>
+          <h3>Free shipping</h3>
           <p>On orders over $50</p>
           <button onClick={viewAll}>
             Shop Now <ArrowRight size={14} />
@@ -22,7 +22,7 @@ export function PromoBanners() {
       </article>
       <article className="promo-card promo-beige">
         <div>
-          <h3>SPECIAL OFFER</h3>
+          <h3>Special offer</h3>
           <p>Save up to 50% off</p>
           <button onClick={showOffers}>
             Grab the Deal <ArrowRight size={14} />
@@ -32,7 +32,7 @@ export function PromoBanners() {
       </article>
       <article className="promo-card promo-gray">
         <div>
-          <h3>MEMBER BENEFITS</h3>
+          <h3>Member benefits</h3>
           <p>Join now & get exclusive deals</p>
           <a href="#newsletter">
             Join Free <ArrowRight size={14} />

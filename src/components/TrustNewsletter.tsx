@@ -29,8 +29,8 @@ export function TrustNewsletter() {
     <section className="trust-newsletter" id="about">
       <div className="container trust-inner">
         <div className="trust-block">
-          <span className="eyebrow">THE LITTLE THINGS MATTER</span>
-          <h2>TRUSTED BY THOUSANDS</h2>
+          <span className="eyebrow">The little things matter</span>
+          <h2>Trusted by thousands</h2>
           <p>Quality products, happy customers.</p>
           <div className="customer-proof">
             <div className="avatar-stack">
@@ -58,8 +58,8 @@ export function TrustNewsletter() {
           </span>
         </div>
         <div className="newsletter-block" id="newsletter">
-          <span className="eyebrow">GOOD THINGS, STRAIGHT TO YOUR INBOX</span>
-          <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
+          <span className="eyebrow">Good things, straight to your inbox</span>
+          <h2>Subscribe to our newsletter</h2>
           <p>Get the latest updates on new products and sales.</p>
           <form
             className={`newsletter-form ${success ? "subscribed" : ""}`}
@@ -75,7 +75,7 @@ export function TrustNewsletter() {
               name="email"
               type="email"
               autoComplete="email"
-              placeholder="Enter your email address"
+              placeholder="Your email address"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -90,11 +90,11 @@ export function TrustNewsletter() {
               {success ? (
                 <>
                   <Check size={14} />
-                  SUBSCRIBED
+                  Subscribed
                 </>
               ) : (
                 <>
-                  SUBSCRIBE <ArrowRight size={14} />
+                  Subscribe <ArrowRight size={14} />
                 </>
               )}
             </button>

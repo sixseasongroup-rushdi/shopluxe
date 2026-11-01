@@ -64,7 +64,7 @@ export function Footer() {
             </div>
           </div>
           <div className="footer-column">
-            <h3>QUICK LINKS</h3>
+            <h3>Quick links</h3>
             <a href="#home">Home</a>
             <button onClick={viewAll}>Shop</button>
             <a href="#categories">Collections</a>
@@ -72,7 +72,7 @@ export function Footer() {
             <a href="#contact">Contact Us</a>
           </div>
           <div className="footer-column">
-            <h3>CUSTOMER SERVICE</h3>
+            <h3>Customer service</h3>
             {Object.keys(policies).map((title) => (
               <button
                 key={title}
@@ -83,7 +83,7 @@ export function Footer() {
             ))}
           </div>
           <div className="footer-column">
-            <h3>MY ACCOUNT</h3>
+            <h3>My account</h3>
             <button onClick={() => setPanel("account")}>My Account</button>
             <button
               onClick={() =>
@@ -111,7 +111,7 @@ export function Footer() {
             </button>
           </div>
           <div className="footer-column footer-contact">
-            <h3>CONTACT US</h3>
+            <h3>Contact us</h3>
             <a href="tel:+15550102026">
               <Phone size={15} />
               <span>+1 (555) 010-2026</span>
@@ -132,7 +132,7 @@ export function Footer() {
               Illustrative demo contact details.
             </span>
             <a className="back-top" href="#home">
-              BACK TO TOP <ArrowUpRight size={13} />
+              Back to top <ArrowUpRight size={13} />
             </a>
           </div>
         </div>

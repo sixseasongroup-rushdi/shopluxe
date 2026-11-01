@@ -16,27 +16,27 @@ export function TrendingProducts() {
     )
     .slice(0, showAll ? undefined : 5);
   const title = offersOnly
-    ? "THE GOOD-FIND EDIT"
+    ? "The good-find edit"
     : category !== "all"
-      ? `${categories.find((c) => c.id === category)?.name.toUpperCase()} COLLECTION`
+      ? `${categories.find((c) => c.id === category)?.name} collection`
       : showAll
-        ? "ALL PRODUCTS"
-        : "TRENDING PRODUCTS";
+        ? "All products"
+        : "Trending products";
   return (
     <section id="products" className="container products-section">
       <div className="section-heading products-heading">
         <div>
-          <span className="eyebrow">DISCOVER YOUR NEXT FAVORITE</span>
+          <span className="eyebrow">Discover your next favorite</span>
           <h2>{title}</h2>
         </div>
         <button className="text-link" onClick={viewAll}>
           {category !== "all" || offersOnly ? (
             <>
-              CLEAR FILTER <X size={14} />
+              Clear filter <X size={14} />
             </>
           ) : (
             <>
-              VIEW ALL PRODUCTS <ArrowRight size={15} />
+              View all products <ArrowRight size={15} />
             </>
           )}
         </button>
